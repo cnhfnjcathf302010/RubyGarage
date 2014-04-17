@@ -8,7 +8,7 @@ end
 group :production do
   gem 'rails_12factor', '0.0.2'
 end
-  gem 'sqlite3', '1.3.8'
+
 gem 'webrick', '1.3.1'
 gem 'sass-rails', '~> 4.0.1'
 gem 'uglifier', '2.1.1'
