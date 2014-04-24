@@ -94,7 +94,16 @@ tasks.todos.views.TodoView = (function (views, models, collections) {
 		
 		increase: function () {
 			this.collectionBinder.bind(this.collection, this.$tasks);
-			this.modelBinder.bind(this.model, this.el);
+			this.modelBinder.bind(this.model, this.el, this.constructor.bindings);
+		}
+	}, {
+		bindings {
+			header: [{
+				selector: '[name=header]'
+			}, {
+				selector: '[name=header]',
+				elAttribute: 'title'
+			}]
 		}
 	});
 	
