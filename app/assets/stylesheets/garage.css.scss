@@ -71,7 +71,7 @@ html {
 			[name=header] {
 				display: inline-block;
 				@include align-middle();
-				@include text-overlofw();
+				@include text-overflow();
 				max-width: 250px;
 			}
 			
