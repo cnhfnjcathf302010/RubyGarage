@@ -72,7 +72,12 @@ tasks.todos.views.TaskView = (function (views) {
 				elAttribute: 'disabled'
 			}],
 			
-			title: '[name=title]'
+			title: [{
+				selector: '[name=title]'
+			}, {
+				selector: '[name=title]',
+				elAttribute: 'title'
+			}]
 		}
 		
 	});
