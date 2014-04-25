@@ -14,7 +14,6 @@ tasks.todos.views.TaskView = (function (views) {
 		
 		initialize: function () {
 			this.modelBinder = new Backbone.ModelBinder();
-			this.listenToOnce(this.model, 'destroy', this.close);
 		},
 		
 		deleteTask: function () {
