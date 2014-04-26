@@ -8,7 +8,7 @@ window.tasks = {
 		models: {},
 		collections: {},
 		routers: {},
-		elems: {}
+		elems: {},
 		init: function () {
 			var main = new this.views.MainView({
 				el: 'body'
