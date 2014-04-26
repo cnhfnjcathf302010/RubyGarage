@@ -1,3 +1,3 @@
 $(function () {
-	tasks.todos.init();
+	window.tasks.todos.init();
 });
