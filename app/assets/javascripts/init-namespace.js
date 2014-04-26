@@ -9,5 +9,12 @@ window.tasks = {
 		collections: {},
 		routers: {},
 		elems: {}
+		init: function () {
+			var main = new this.views.MainView({
+				el: 'body'
+			});
+		
+			main.render();
+		}
 	}
 };
