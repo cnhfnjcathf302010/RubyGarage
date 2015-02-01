@@ -238,7 +238,13 @@ html {
         cursor: pointer;
         border-top: 1px double lightgrey;
         background: $blueGradient;
-
+        
+        .btn.header-button {
+          
+        }
+        span.pull-right {
+          margin-top: -2em;
+        }
         &:hover .toggle-show {
           display: inline-block;
         }
