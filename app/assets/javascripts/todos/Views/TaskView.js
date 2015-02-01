@@ -13,6 +13,7 @@ tasks.todos.views.TaskView = (function (views) {
 		},
 		
 		initialize: function () {
+			this.listenToOnce(this.model, 'destroy', this.close);
 			this.modelBinder = new Backbone.ModelBinder();
 		},
 
@@ -82,7 +83,12 @@ tasks.todos.views.TaskView = (function (views) {
 				elAttribute: 'disabled'
 			}],
 			
-			title: '[name=title]'
+			title: [{
+				selector: '[name=title]'
+			}, {
+				selector: '[name=title]',
+				elAttribute: 'title'
+			}]
 		}
 		
 	});
