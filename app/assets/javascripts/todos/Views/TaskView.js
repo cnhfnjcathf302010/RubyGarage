@@ -15,7 +15,17 @@ tasks.todos.views.TaskView = (function (views) {
 		initialize: function () {
 			this.modelBinder = new Backbone.ModelBinder();
 		},
-		
+
+        sortTask: function () {
+            var priority = this.model.get('priority') || 0;
+
+            this.model.save({
+                priority: ++priority
+            });
+
+            this.model.collection.sort();
+        },
+
 		deleteTask: function () {
 			this.model.destroy();
 			this.close();

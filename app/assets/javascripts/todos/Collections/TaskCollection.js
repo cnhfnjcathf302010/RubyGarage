@@ -4,7 +4,11 @@ tasks.todos.collections.TaskCollection = (function (app) {
 	
 		url: 'tasks',
 		
-		model: app.models.TaskModel
+		model: app.models.TaskModel,
+
+        comparator: function (model) {
+            return model.get('priority');
+        }
 		
 	});
 	

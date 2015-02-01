@@ -4,9 +4,19 @@
   <title>Ruby Garage Task</title>
   <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet" />
   <%= stylesheet_link_tag    "application", media: "all" %>
-  <%= javascript_include_tag "application" %>
+  
   <%= csrf_meta_tags %>
 </head>
-<body class='container'>
-</body>
+    <body class='container'>
+        <ul class="nav nav-pills pull-right">
+            <% if user_signed_in? %>
+                <span>Hello, <%= current_user.email %></span>
+                <%= link_to 'Log out', destroy_user_session_path, :method => :delete %>
+            <% else %>
+                <%= link_to 'Log in', new_user_session_path %> или <%= link_to 'Register now', new_user_registration_path %>
+            <% end %>
+        </ul>
+
+		<%= yield %>
+	</body>
 </html>

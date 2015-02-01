@@ -4,7 +4,9 @@ class TodosController < ApplicationController
   # GET /todos
   # GET /todos.json
   def index
-    @todos = Todo.all
+    if user_signed_in?
+      @todos = Todo.where(user_id: current_user.id)  
+    end    
   end
 
   # GET /todos/1
@@ -24,7 +26,10 @@ class TodosController < ApplicationController
   # POST /todos
   # POST /todos.json
   def create
-    @todo = Todo.new(todo_params)
+    params = todo_params
+    params[:user_id] = current_user.id
+
+    @todo = Todo.new(params)
 
     respond_to do |format|
       if @todo.save

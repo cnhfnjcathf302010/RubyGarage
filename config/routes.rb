@@ -1,9 +1,16 @@
 Hello::Application.routes.draw do
-  
-  resources :tasks
 
+  get 'persons/profile', to: 'home#index'
+  # get '/users/sign_out', to: 'devise/sessions#destroy'
+  devise_for :users
+
+  # resources :tasks do
+	resources :tasks
+  # end
+
+  # post '/:user_id/todos/:id', to 'todos#create'
   resources :todos
   
-  root 'todos#index'
-  
+  root 'home#index'
+
 end

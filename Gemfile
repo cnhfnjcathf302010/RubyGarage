@@ -10,6 +10,7 @@ group :production do
   gem 'rails_12factor', '0.0.2'
 end
 
+gem 'devise'
 gem 'webrick', '1.3.1'
 gem 'sass-rails', '~> 4.0.1'
 gem 'uglifier', '2.1.1'
